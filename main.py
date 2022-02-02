@@ -1,5 +1,9 @@
 # Main PY file for [D|(ND)]FA Project
 # NOTE: Currently unrefined and an absolute WIP. Not functional atm.
+# TODO: God, this is horrible as is; breaks major OOP practices — need to refactor:
+    # Ensure FA theory is accurately reflected in objects
+    # Add getters and setters for the love of god
+    # Fix typehinting.
 import itertools, math
 
 class DFA():
