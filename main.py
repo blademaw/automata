@@ -81,7 +81,7 @@ class DFA():
         <= <max_length> in language described by FA.
         """
         # enumerate all possible strings in alphabet up to length
-        lang = [self.sorted_alph]
+        lang = []
         for length in range(2, max_length+1):
             for word in itertools.product(self.sorted_alph, repeat=length):
                 lang.append(''.join(word))
@@ -145,11 +145,13 @@ if __name__ == "__main__":
     matr = [[None]*len(alph) for x in range(num)]
 
     # create transition matrix
-    print("Enter transition state(s) for the following states in the order of alphabet %s" % alph)
+    print(f"Enter transition state(s) for the following states in the order of alphabet {alph}")
     for i in range(1, num+1):
-        cur = input("%d: " % i).split()
+        cur = input(f"{i}: ").split()
         for s in range(len(alph)):
             matr[i-1][s] = int(cur[s])
+    print(matr)
+    
     print("\n\nStrings:")
     
     dfa_imp = DFA(alph, num, matr, start, final)
